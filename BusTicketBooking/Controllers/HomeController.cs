@@ -32,6 +32,21 @@ namespace BusTicketBooking.Controllers
         {
             return View();
         }
+        [HttpPost]
+            [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+        public IActionResult Register(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                // Xử lý đăng ký
+                return RedirectToAction("Index", "Home");
+            }
+            return View(user);
+        }
 
         // Xử lý đăng nhập
         [HttpPost]
