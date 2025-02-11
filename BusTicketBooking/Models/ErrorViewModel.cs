@@ -1,8 +1,9 @@
-namespace BusTicketBooking.Models;
-
-public class ErrorViewModel
+namespace BusTicketBooking.Models
 {
-    public string? RequestId { get; set; }
+    public class ErrorViewModel
+    {
+        public required string RequestId { get; set; }
 
-    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
 }
