@@ -1,10 +1,18 @@
-﻿<!DOCTYPE html>
+@{ 
+    IgnoreSection("Styles"); 
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - HoChiMinhBus</title>
+    @RenderSection("Styles", required: false)
+    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="stylesheet" href="~/css/register.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,12 +29,54 @@
                     <li class="nav-item">
                         <a class="btn btn-outline-success" asp-controller="Home" asp-action="Login">Đăng Nhập</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-success" asp-controller="Home" asp-action="Register">Đăng Ký</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container">
+        <h2>Danh sách tuyến xe</h2>
+        <ul class="list-group mb-4">
+            <li class="list-group-item">
+                Tuyến 1: Bến xe Chợ Lớn - Bến Thành
+                <br>Giá: 5.000 VNĐ
+                <br><i class="fas fa-clock" style="color: #000; font-size: 20px;"></i> 5:00 - 21:30
+            </li>
+            <li class="list-group-item">
+                Tuyến 2: An Sương - Bến Thành
+                <br>Giá: 6.000 VNĐ
+                <br><i class="fas fa-clock" style="color: #000; font-size: 20px;"></i> 5:30 - 22:00
+            </li>
+            <li class="list-group-item">
+                Tuyến 3: Bến xe Miền Tây - Bến Thành
+                <br>Giá: 7.000 VNĐ
+                <br><i class="fas fa-clock" style="color: #000; font-size: 20px;"></i> 6:00 - 22:00
+            </li>
+            <li class="list-group-item">
+                Tuyến 4: Bến xe Ngã Tư Ga - Bến Thành
+                <br>Giá: 5.000 VNĐ
+                <br><i class="fas fa-clock" style="color: #000; font-size: 20px;"></i> 5:15 - 20:45
+            </li>
+            <li class="list-group-item">
+                Tuyến 5: Chợ Lớn - Khu đô thị Hiệp Phú
+                <br>Giá: 6.000 VNĐ
+                <br><i class="fas fa-clock" style="color: #000; font-size: 20px;"></i> 5:00 - 21:00
+            </li>
+            <li class="list-group-item">
+                Tuyến 6: Bến Thành - Thủ Đức
+                <br>Giá: 7.000 VNĐ
+                <br><i class="fas fa-clock" style="color: #000; font-size: 20px;"></i> 5:30 - 22:30
+            </li>
+            <li class="list-group-item">
+                Tuyến 7: Bến xe Miền Đông - Bến Thành
+                <br>Giá: 6.000 VNĐ
+                <br><i class="fas fa-clock" style="color: #000; font-size: 20px;"></i> 6:00 - 22:00
+            </li>
+        </ul>
+
         @RenderBody()
     </div>
 
