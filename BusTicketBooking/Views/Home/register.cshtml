@@ -1,7 +1,11 @@
 @model BusTicketBooking.Models.User
+@{
+    ViewData["Title"] = "Register";
+}
 
 @section Styles {
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/register.css" />
 }
 
 <div class="container mt-5">
@@ -17,9 +21,9 @@
             <input asp-for="Password" type="password" class="form-control" required />
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
-        <div class="mb-3">
-            <label asp-for="Email" class="form-label"></label>
-            <input asp-for="Email" type="email" class="form-control" required />
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-primary">Đăng Ký</button>
